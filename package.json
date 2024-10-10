@@ -13,6 +13,9 @@
   "author": "Abed01-lab",
   "license": "ISC",
   "description": "A template for building express-typescript-services",
+  "repository": {
+    "url": "https://github.com/Abed01-lab/express-typescript-service-template"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
