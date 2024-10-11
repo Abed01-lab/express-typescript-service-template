@@ -1,5 +1,6 @@
 {
   "name": "express-typescript-service",
+  "displayName": "Express Typescript Service Template",
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon",
