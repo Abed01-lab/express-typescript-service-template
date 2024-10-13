@@ -1,10 +1,10 @@
-import { Router } from "express";
+import { Router } from 'express';
 
 export const statusRouter = Router();
 
-statusRouter.get("/", (_req, res) => {
+statusRouter.get('/', (_req, res) => {
   res.send({
-    status: "live",
-    version: "1.0.0",
+    status: 'live',
+    version: '1.0.18',
   });
 });
