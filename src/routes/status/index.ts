@@ -5,6 +5,6 @@ export const statusRouter = Router();
 statusRouter.get('/', (_req, res) => {
   res.send({
     status: 'live',
-    version: '1.0.18',
+    version: '1.0.19',
   });
 });
