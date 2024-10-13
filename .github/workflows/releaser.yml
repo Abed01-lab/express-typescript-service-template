@@ -33,9 +33,15 @@ jobs:
           username: ${{ github.actor }} # Use the GitHub actor (the user triggering the action)
           password: ${{ secrets.GITHUB_TOKEN }} # Use the provided GitHub token
 
-      - name: Build and push Docker image
+      - name: Build and push container versioned image
         run: |
           VERSION=$(echo "${GITHUB_REF}" | grep -oP '(?<=tags\/v)[0-9]+\.[0-9]+\.[0-9]+')
           IMAGE_NAME="ghcr.io/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]'):${VERSION}"
+          docker build -t $IMAGE_NAME .
+          docker push $IMAGE_NAME
+
+      - name: Build and push container latest image
+        run: |
+          IMAGE_NAME="ghcr.io/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]'):latest"
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME
