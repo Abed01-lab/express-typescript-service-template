@@ -4,7 +4,7 @@ export const statusRouter = Router();
 
 statusRouter.get('/', (_req, res) => {
   res.send({
-    status: 'live',
+    status: 'green deployments live',
     version: '1.0.20',
   });
 });
